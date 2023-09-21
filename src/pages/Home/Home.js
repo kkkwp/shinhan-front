@@ -2,6 +2,8 @@ import { useState } from "react";
 import styles from "./Home.module.css";
 import HeaderCard from "../../assets/images/header_1.svg";
 import EventLogo1 from "../../assets/images/event_logo_1.png";
+import EventLogo2 from "../../assets/images/event_logo_2.png";
+import EventLogo3 from "../../assets/images/event_logo_3.png";
 import EventInfo from "../../components/EventInfo/EventInfo";
 import AccordianListItem from "../../components/AccordianListItem/AccordianListItem";
 import LinkListItem from "../../components/LinkListItem/LinkListItem";
@@ -90,6 +92,21 @@ const Home = () => {
             onClick={onClickAccordion2}
             isOpen={openAccordion2}
           />
+
+          <div className={`${styles.linkContentContainer} ${openAccordion2 ? styles.itemOpen : ""}`}>
+            <LinkListItem
+              subText={"쉽게 이해되는 투자 콘텐츠가 가득!"}
+              text={"<알파TV> 구독하기"}
+              imageUrl={EventLogo2}
+              linkUrl={"https://www.youtube.com/@shinhansecurities"}
+            />
+            <LinkListItem
+              subText={"한발 빠르게 만나보는 투자 콘텐츠!"}
+              text={"카카오톡 채널 추가하기"}
+              imageUrl={EventLogo3}
+              linkUrl={"https://pf.kakao.com/_xdnLFd"}
+            />
+          </div>
         </div>
       </section>
 
