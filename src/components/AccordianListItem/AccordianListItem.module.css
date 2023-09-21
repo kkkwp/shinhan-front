@@ -1,0 +1,23 @@
+.accordionContainer {
+    cursor: pointer;
+    background: #FFF;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.accordionTitle {
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.arrowIcon {
+    transition: transform 0.3s ease-in-out;
+}
+
+.arrowOpen {
+    transform: rotate(180deg);
+}
