@@ -1,11 +1,10 @@
 import { useState } from "react";
 import styles from "./Home.module.css";
 import HeaderCard from "../../assets/images/header_1.svg";
-import ArrowIcon from "../../assets/images/ic_arrow.svg";
 import EventLogo1 from "../../assets/images/event_logo_1.png";
-import ArrowIconFill from "../../assets/images/ic_arrow_fill.png";
 import EventInfo from "../../components/EventInfo/EventInfo";
 import AccordianListItem from "../../components/AccordianListItem/AccordianListItem";
+import LinkListItem from "../../components/LinkListItem/LinkListItem";
 
 const Home = () => {
   const [openAccordion1, setOpenAccordion1] = useState(false);
@@ -75,16 +74,12 @@ const Home = () => {
           />
 
           <div className={`${styles.linkContentContainer} ${openAccordion1 ? styles.itemOpen : ""}`}>
-            <a className={styles.linkItem} href={"https://digitalshinhansec.com/global"}>
-              <div className={styles.linkLayout}>
-                <img className={styles.linkLogo} src={EventLogo1} />
-                <div>
-                  <div className={styles.linkSubText}>수수료+환전우대 혜택까지</div>
-                  <div className={styles.linkText}>해외주식</div>
-                </div>
-              </div>
-              <img className={styles.linkArrowIcon} src={ArrowIconFill} />
-            </a>
+            <LinkListItem
+              subText={"수수료+환전우대 혜택까지"}
+              text={"해외주식"}
+              imageUrl={EventLogo1}
+              linkUrl={"https://digitalshinhansec.com/global"}
+            />
           </div>
         </div>
 
