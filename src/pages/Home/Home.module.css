@@ -131,6 +131,67 @@
     line-height: normal;
 }
 
+.arrowIcon {
+    transition: transform 0.3s ease-in-out;
+}
+
+.arrowOpen {
+    transform: rotate(180deg);
+}
+
+.linkItem {
+    padding: 8px 24px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: solid 1px #EAEBEF;
+}
+
+.linkLayout {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.linkLogo {
+    width: 83px;
+    height: 83px;
+}
+
+.linkSubText {
+    color: #2E2E2E;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.linkText {
+    color: #000;
+    font-family: Pretendard;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.linkArrowIcon {
+    width: 24px;
+    height: 24px;
+}
+
+.linkContentContainer {
+    max-height: 0;
+    overflow-y: hidden;
+    transition: all 700ms;
+}
+
+.itemOpen {
+    max-height: 500px;
+    display: block;
+}
+
 /* ------ 유의사항 섹션 ------ */
 .noticeSction {
     margin-top: 12px;

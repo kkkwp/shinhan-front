@@ -1,8 +1,21 @@
+import { useState } from "react";
 import styles from "./Home.module.css";
 import HeaderCard from "../../assets/images/header_1.svg";
 import ArrowIcon from "../../assets/images/ic_arrow.svg";
+import EventLogo1 from "../../assets/images/event_logo_1.png";
+import ArrowIconFill from "../../assets/images/ic_arrow_fill.png";
 
 const Home = () => {
+  const [openAccordion1, setOpenAccordion1] = useState(false);
+  const [openAccordion2, setOpenAccordion2] = useState(false);
+
+  const onClickAccordion1 = () => {
+    setOpenAccordion1(!openAccordion1);
+  };
+  const onClickAccordion2 = () => {
+    setOpenAccordion2(!openAccordion2);
+  };
+
   return (
     <div className={styles.container}>
       <section className={styles.header}>
@@ -49,15 +62,33 @@ const Home = () => {
         </a>
       </section>
 
-      {/* 추가 링크  */}
+      {/* 아코디언 메뉴 */}
       <section className={styles.linkSection}>
-        <div className={styles.accordionContainer}>
-          <div className={styles.accordionTitle}>투자에 필요한 더~ 많은 혜택</div>
-          <img src={ArrowIcon} className={styles.arrowIcon} />
+        {/* 메뉴 1 */}
+        <div>
+          <div className={styles.accordionContainer} onClick={onClickAccordion1}>
+            <div className={styles.accordionTitle}>투자에 필요한 더~ 많은 혜택</div>
+            <img src={ArrowIcon} className={`${styles.arrowIcon} ${openAccordion1 ? styles.arrowOpen : ""}`} />
+          </div>
+
+          <div className={`${styles.linkContentContainer} ${openAccordion1 ? styles.itemOpen : ""}`}>
+            <a className={styles.linkItem} href={"https://digitalshinhansec.com/global"}>
+              <div className={styles.linkLayout}>
+                <img className={styles.linkLogo} src={EventLogo1} />
+                <div>
+                  <div className={styles.linkSubText}>수수료+환전우대 혜택까지</div>
+                  <div className={styles.linkText}>해외주식</div>
+                </div>
+              </div>
+              <img className={styles.linkArrowIcon} src={ArrowIconFill} />
+            </a>
+          </div>
         </div>
-        <div className={styles.accordionContainer}>
+
+        {/* 메뉴 2 */}
+        <div className={styles.accordionContainer} onClick={onClickAccordion2}>
           <div className={styles.accordionTitle}>쉽고 빠른 투자 정보</div>
-          <img src={ArrowIcon} className={styles.arrowIcon} />
+          <img src={ArrowIcon} className={`${styles.arrowIcon} ${openAccordion2 ? styles.arrowOpen : ""}`} />
         </div>
       </section>
 
