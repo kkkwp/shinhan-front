@@ -1,3 +1,13 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 .container {}
 
 .header {
@@ -42,6 +52,9 @@
 .cardImage {
     width: 174px;
     padding: 20px;
+
+    /* 애니메이션 효과 */
+    animation: fadeIn 1s ease-in-out;
 }
 
 .cardTitle {
