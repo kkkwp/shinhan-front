@@ -3,7 +3,7 @@ import "./styles/global.css";
 
 function App() {
   return (
-    <div className="App">
+    <div className="layout">
       Hello World!
     </div>
   );
