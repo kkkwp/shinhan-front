@@ -4,10 +4,16 @@ import HeaderCard from "../../assets/images/header_1.svg";
 import ArrowIcon from "../../assets/images/ic_arrow.svg";
 import EventLogo1 from "../../assets/images/event_logo_1.png";
 import ArrowIconFill from "../../assets/images/ic_arrow_fill.png";
+import EventInfo from "../../components/EventInfo/EventInfo";
 
 const Home = () => {
   const [openAccordion1, setOpenAccordion1] = useState(false);
   const [openAccordion2, setOpenAccordion2] = useState(false);
+
+  const events = [
+    { title: "기간", text: "2023.07.01(토) ~ 2023.12.31(일)" },
+    { title: "대상", text: "신한투자증권 생애 첫 계좌 개설 신규 고객" },
+  ];
 
   const onClickAccordion1 = () => {
     setOpenAccordion1(!openAccordion1);
@@ -46,14 +52,9 @@ const Home = () => {
 
         {/* 기간/대상 */}
         <div className={styles.infoContainer}>
-          <div className={styles.eventInfo}>
-            <div className={styles.infoTitle}>기간</div>
-            <div className={styles.infoText}>2023.07.01(토) ~ 2023.12.31(일)</div>
-          </div>
-          <div className={styles.eventInfo}>
-            <div className={styles.infoTitle}>대상</div>
-            <div className={styles.infoText}>신한투자증권 생애 첫 계좌 개설 신규 고객</div>
-          </div>
+          {events.map((event) => (
+            <EventInfo title={event.title} text={event.text} />
+          ))}
         </div>
 
         {/* 혜택받으러가기 버튼 */}
@@ -110,7 +111,7 @@ const Home = () => {
             파운트 등 핀테크 제휴계좌는 제외됩니다.
           </li>
         </ul>
-        
+
         <footer className={styles.footer}>
           서울특별시 영등포구 여의대로 70 (신한투자증권 타워) <br />
           대표이사 김상태 |사업자등록번호 116-81-36684 <br />

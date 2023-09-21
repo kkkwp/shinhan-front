@@ -1,0 +1,22 @@
+.eventInfo {
+    padding-bottom: 24px;
+}
+
+/* ------ 이벤트 추가 정보 (기간,대상 등) ------ */
+.infoTitle {
+    color: #000;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-bottom: 12px;
+}
+
+.infoText {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.16px;
+}
