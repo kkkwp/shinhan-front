@@ -17,6 +17,8 @@ jobs:
 
       - name: Build app
         run: npm run build
+        env:
+          CI: false
 
       - name: Deploy To s3
         env:
