@@ -1,18 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./GlobalStock.module.css";
 import HeaderCard from "../../assets/images/header_1.svg";
 import EventLogo1 from "../../assets/images/event_logo_1.png";
+import { getStockGlobalEvents } from "../../apis/stockApis";
 import EventInfo from "../../components/EventInfo/EventInfo";
 import AccordianListItem from "../../components/AccordianListItem/AccordianListItem";
 import LinkListItem from "../../components/LinkListItem/LinkListItem";
 import TopNav from "../../components/TopNav/TopNav";
 import EventCard from "../../components/EventCard/EventCard";
-
-const events = [
-  { num: 1, title: "기간", text: "2023.07.01(토) ~ 2023.12.31(일)" },
-  { num: 3, title: "대상", text: "신한투자증권 생애 첫 계좌 개설 신규 고객" },
-];
 
 const eventCards = [
   {
@@ -38,9 +34,20 @@ const eventCards = [
 
 const GlobalStock = () => {
   const navigate = useNavigate();
-
+  const [events, setEvents] = useState();
   const [openAccordion1, setOpenAccordion1] = useState(false);
   const [openAccordion2, setOpenAccordion2] = useState(false);
+
+  // 렌더링 후 호출되는 로직
+  useEffect(() => {
+    fetchEvents();
+  }, []);
+
+  // 이벤트 리스트 서버에서 불러와서 events 상태에 set
+  const fetchEvents = async () => {
+    const response = await getStockGlobalEvents();
+    setEvents(response);
+  };
 
   const onClickAccordion1 = () => {
     setOpenAccordion1(!openAccordion1);
@@ -60,31 +67,40 @@ const GlobalStock = () => {
 
       <div className={styles.container}>
         <section className={styles.header}>
-          <div className={styles.headerSubTitle}>지금이 일본 투자할 타이밍</div>
-          <div className={styles.headerTitle}>
-            <span className={styles.primaryColor}>수수료 + 환전우대 혜택!</span>
-          </div>
+          {/* 이벤트가 없으면(불러오기 전이면) 로딩 중 노출 */}
+          {!events && <div>loading...</div>}
 
-          {/* 카드 섹션 */}
-          <EventCard event={eventCards[0]} />
+          {/* 이벤트가 있으면 이벤트 UI 노출 */}
+          {events &&
+            events.map((event, index) => (
+              <div className={styles.event}>
+                <div className={styles.roundBadge}>이벤트 {index + 1}</div>
+                <div className={styles.headerSubTitle}>{event.subTitle}</div>
+                <div className={styles.headerTitle}>
+                  <span className={styles.primaryColor}>{event.title}</span>
+                </div>
 
-          {/* 기간/대상 */}
-          <div className={styles.infoContainer}>
-            {events.map((event) => (
-              <EventInfo title={event.title} text={event.text} />
+                {/* 카드 섹션 */}
+                <EventCard event={eventCards[0]} />
+
+                {/* 기간/대상 */}
+                <div className={styles.infoContainer}>
+                  <EventInfo title={"기간"} text={`${event.startDate}-${event.endDate}`} />
+                  <EventInfo title={"대상"} text={event.target} />
+                </div>
+
+                {/* 혜택받으러가기 버튼 */}
+                <a href={event.buttonLink} rel="noreferrer" target="_blank">
+                  <div className={styles.applyButton}>{event.buttonLabel}</div>
+                </a>
+              </div>
             ))}
-          </div>
-
-          {/* 혜택받으러가기 버튼 */}
-          <a>
-            <div className={styles.applyButton}>수수료 평생혜택 받으러가기</div>
-          </a>
         </section>
 
         {/* 아코디언 메뉴  */}
-        <section className={styles.linkSection}>
+        < section className={styles.linkSection} >
           {/* 메뉴 1 */}
-          <div>
+          < div >
             <AccordianListItem
               title={"투자에 필요한 더~ 많은 혜택"}
               onClick={onClickAccordion1}
@@ -107,10 +123,10 @@ const GlobalStock = () => {
             onClick={onClickAccordion2}
             isOpen={openAccordion2}
           />
-        </section>
+        </section >
 
         {/* 이벤트 유의사항 */}
-        <section className={styles.noticeSction}>
+        < section className={styles.noticeSction} >
           <h4 className={styles.noticeTitle}>※ 이벤트 유의사항</h4>
           <ul className={styles.noticeText}>
             <li>
@@ -133,8 +149,8 @@ const GlobalStock = () => {
             대표이사 김상태 |사업자등록번호 116-81-36684 <br />
             ©2023 SHINHAN SECURITIES CO.,LTD.
           </footer>
-        </section>
-      </div>
+        </section >
+      </div >
     </>
   );
 };

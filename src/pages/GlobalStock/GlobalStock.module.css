@@ -106,3 +106,25 @@
     gap: 8px;
     padding: 8px;
 }
+
+.roundBadge {
+    height: 20px;
+    padding: 2px 12px;
+    font-size: 12px;
+    width: fit-content;
+    margin-bottom: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid #111;
+    border-radius: 20px;
+    color: #111;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+}
+
+.event {
+    padding-bottom: 60px;
+}
