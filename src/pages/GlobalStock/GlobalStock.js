@@ -1,36 +1,13 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./GlobalStock.module.css";
-import HeaderCard from "../../assets/images/header_1.svg";
 import EventLogo1 from "../../assets/images/event_logo_1.png";
 import { getStockGlobalEvents } from "../../apis/stockApis";
 import EventInfo from "../../components/EventInfo/EventInfo";
 import AccordianListItem from "../../components/AccordianListItem/AccordianListItem";
 import LinkListItem from "../../components/LinkListItem/LinkListItem";
 import TopNav from "../../components/TopNav/TopNav";
-import EventCard from "../../components/EventCard/EventCard";
-
-const eventCards = [
-  {
-    cardImage: HeaderCard,
-    title: (
-      <>
-        온라인 국내주식 수수료
-        <br />
-        <span className={styles.primaryColor}>평생 혜택 </span>제공
-      </>
-    ),
-    list: [
-      "* 유관기관 제비용만 고객 부담(07.01 기준)",
-      "- 코스피, 코스닥, 코넥스 : 0.00363960%",
-      "- K-OTC : 0.09091870%",
-      "- ETF, ETN, ELW : 0.00420870%",
-
-      "* 온라인 채널 거래에 한함(증권플러스 제외)",
-    ],
-  },
-  { num: 3, title: "대상", text: "신한투자증권 생애 첫 계좌 개설 신규 고객" },
-];
+import BenefitCard from "../../components/BenefitCard/BenefitCard";
 
 const GlobalStock = () => {
   const navigate = useNavigate();
@@ -81,7 +58,7 @@ const GlobalStock = () => {
                 </div>
 
                 {/* 카드 섹션 */}
-                <EventCard event={eventCards[0]} />
+                <BenefitCard benefit={event.benefits[0]} />
 
                 {/* 기간/대상 */}
                 <div className={styles.infoContainer}>
