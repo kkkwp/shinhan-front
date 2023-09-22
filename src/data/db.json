@@ -1,0 +1,70 @@
+{
+  "globalStockEvents": [
+    {
+      "id": 16,
+      "subTitle": "거래할수록 당첨 확률 UP",
+      "title": "매일 쏟아지는 럭키 찬스!",
+      "startDate": "2023-09-04",
+      "endDate": "2023-10-31",
+      "target": "신한투자증권 모든 고객",
+      "restrictions": [
+        "만 19세 이상 개인 고객(미성년자 제외) * 외국인, 법인 고객, 임직원 제외",
+        "마케팅 이용 동의 및 이벤트 신청 필수"
+      ],
+      "buttonLabel": "경품 응모권 받으러가기",
+      "buttonLink": "https://www.shinhansec.com/event2/230904_overseasStockEvent/event.jsp",
+      "benefits": [
+        {
+          "id": 15,
+          "image": "https://raw.githubusercontent.com/congchu/shinhan-front/main/src/assets/images/events/slide_2_1.png",
+          "title": "매일 거래금액에 따라 \n경품 추첨 응모권 제공",
+          "restrictions": [
+            "거래금액별 응모권 제공 기준\n① 10만원 이상: 1장 ② 100만원 이상: 2장\n③ 1,000만원 이상: 5장"
+          ]
+        },
+        {
+          "id": 18,
+          "image": "https://raw.githubusercontent.com/congchu/shinhan-front/main/src/assets/images/events/slide_2_2.png",
+          "title": "이벤트 신청만 해도\n테슬라 0.001주 선착순 제공",
+          "restrictions": [
+            "선착순 30,000명 한정",
+            "소수점 주식 제공"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "subTitle": "지금이 일본 투자할 타이밍123123",
+      "title": "수수료 + 환전우대 혜택!",
+      "startDate": "2023-09-01",
+      "endDate": "2023-12-29",
+      "target": "신한투자증권 모든 고객",
+      "restrictions": [
+        "외국인 제외",
+        "이벤트 신청 없이 자동 적용",
+        "대상 계좌: 일본주식 매매 가능한 모든 계좌"
+      ],
+      "buttonLabel": "일본 투자 시작하기",
+      "buttonLink": "https://www.shinhansec.com/event2/230803_japanfreeEvent/event.html",
+      "benefits": [
+        {
+          "id": 15,
+          "image": "https://raw.githubusercontent.com/congchu/shinhan-front/main/src/assets/images/events/slide_1_1.png",
+          "title": "일본주식 온라인 매수 수수료 0%",
+          "restrictions": [
+            "MTS, HTS, WTS 거래 시 적용"
+          ]
+        },
+        {
+          "id": 18,
+          "image": "https://raw.githubusercontent.com/congchu/shinhan-front/main/src/assets/images/events/slide_1_2.png",
+          "title": "일본주식 온라인 매수 수수료 0%",
+          "restrictions": [
+            "MTS, HTS, WTS 거래 시 적용"
+          ]
+        }
+      ]
+    }
+  ]
+}
