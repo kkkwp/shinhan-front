@@ -4,7 +4,7 @@ const BenefitCard = ({ benefit }) => {
   return (
     <div className={styles.cardContainer}>
       <div className={styles.cardImageContainer}>
-        <img className={styles.cardImage} src={benefit.cardImage} alt="banner" />
+        <img className={styles.cardImage} src={benefit.image} alt="banner" />
       </div>
       <div className={styles.cardTitle}>{benefit.title}</div>
       {/* 설명 */}
