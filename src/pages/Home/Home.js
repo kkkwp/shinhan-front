@@ -72,7 +72,7 @@ const Home = () => {
           </div>
 
           {/* 혜택받으러가기 버튼 */}
-          <a>
+          <a href="https://open.shinhansec.com/m/event2/230701_feeEvent/event.jsp" rel="noreferrer" target="_blank">
             <div className={styles.applyButton}>수수료 평생혜택 받으러가기</div>
           </a>
         </section>

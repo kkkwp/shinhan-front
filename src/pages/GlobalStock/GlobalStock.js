@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./GlobalStock.module.css";
 import EventLogo1 from "../../assets/images/event_logo_1.png";
+import EventLogo2 from "../../assets/images/event_logo_2.png";
+import EventLogo3 from "../../assets/images/event_logo_3.png";
 import { getStockGlobalEvents } from "../../apis/stockApis";
 import EventInfo from "../../components/EventInfo/EventInfo";
 import AccordianListItem from "../../components/AccordianListItem/AccordianListItem";
@@ -86,20 +88,38 @@ const GlobalStock = () => {
 
             <div className={`${styles.linkContentContainer} ${openAccordion1 ? styles.itemOpen : ""}`}>
               <LinkListItem
-                subText={"수수료+환전우대 혜택까지"}
-                text={"해외주식"}
+                subText={"수수료 평생 혜택 받는"}
+                text={"국내주식"}
                 imageUrl={EventLogo1}
-                linkUrl={"https://digitalshinhansec.com/global"}
+                linkUrl={"https://digitalshinhansec.com/"}
               />
             </div>
           </div>
 
           {/* 메뉴 2 */}
-          <AccordianListItem
-            title={"쉽고 빠른 투자 정보"}
-            onClick={onClickAccordion2}
-            isOpen={openAccordion2}
-          />
+          <div>
+            <AccordianListItem
+              title={"쉽고 빠른 투자 정보"}
+              onClick={onClickAccordion2}
+              isOpen={openAccordion2}
+            />
+
+            <div className={`${styles.linkContentContainer} ${openAccordion2 ? styles.itemOpen : ""}`}>
+              <LinkListItem
+                subText={"쉽게 이해되는 투자 콘텐츠가 가득!"}
+                text={"<알파TV> 구독하기"}
+                imageUrl={EventLogo2}
+                linkUrl={"https://www.youtube.com/@shinhansecurities"}
+              />
+              <LinkListItem
+                subText={"한발 빠르게 만나보는 투자 콘텐츠!"}
+                text={"카카오톡 채널 추가하기"}
+                imageUrl={EventLogo3}
+                linkUrl={"https://pf.kakao.com/_xdnLFd"}
+              />
+            </div>
+          </div>
+
         </section >
 
         {/* 이벤트 유의사항 */}
